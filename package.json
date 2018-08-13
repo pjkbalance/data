@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "study nodejs",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjkbalance/nodejs.git"
+  },
+  "author": "jiakang.peng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjkbalance/nodejs/issues"
+  },
+  "homepage": "https://github.com/pjkbalance/nodejs#readme"
+}
