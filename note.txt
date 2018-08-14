@@ -1,0 +1,43 @@
+node命令
+进入交互式解释器，可用于测试js
+
+回调函数
+异步编程的直接体现
+一般作为参数的最后一个参数出现 如： function(name, age, ..., callback)
+
+在 Node 应用程序中，执行异步操作的函数将回调函数作为最后一个参数， 回调函数接收错误对象作为第一个参数。
+
+events 模块只提供了一个对象： events.EventEmitter。
+EventEmitter 的核心就是事件触发与事件监听器功能的封装
+只有注册了相应事件的EventEmitter才可以触发相应事件
+
+大多数时候我们不会直接使用 EventEmitter，而是在对象中继承它。包括 fs、net、 http 在内的，只要是支持事件响应的核心模块都是 EventEmitter 的子类。
+
+为什么要这样做呢？原因有两点：
+具有某个实体功能的对象实现事件符合语义， 事件的监听和发生应该是一个对象的方法。
+JavaScript 的对象机制是基于原型的，支持 部分多重继承，继承 EventEmitter 不会打乱对象原有的继承关系。
+
+Buffer 实例一般用于表示编码字符的序列
+
+在浏览器 JavaScript 中，通常 window 是全局对象
+在 Node.js 中的全局对象是 global，所有全局变量（除了 global 本身以外）都是 global 对象的属性。
+
+
+全局变量
+永远使用 var 定义变量以避免引入全局变量，因为全局变量会污染 命名空间，提高代码的耦合风险。
+__filename 表示当前正在执行的脚本的文件名
+__dirname 表示当前执行脚本所在的目录
+
+setTimeout(cb, ms) 全局函数在指定的毫秒(ms)数后执行指定函数(cb)。：setTimeout() 只执行一次指定函数。
+clearTimeout( t ) 全局函数用于停止一个之前通过 setTimeout() 创建的定时器。 参数 t 是通过 setTimeout() 函数创建的定时器。
+// 两秒后执行以上函数
+var t = setTimeout(printHello, 2000);
+// 清除定时器
+clearTimeout(t);
+
+setInterval(cb, ms) 全局函数在指定的毫秒(ms)数后执行指定函数(cb)。
+返回一个代表定时器的句柄值。可以使用 clearInterval(t) 函数来清除定时器。
+setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。
+console.time(label): 输出时间，表示计时开始。
+console.timeEnd(label): 结束时间，表示计时结束。
+console.trace()：向标准错误流输出当前的调用栈。
